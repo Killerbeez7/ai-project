@@ -4,6 +4,7 @@ from typing import Dict, Any, List
 
 from data.data_loader import load_all_parts_data
 
+# Recommends a PC build based on a given budget and usage profile
 class Recommender:
     ESSENTIAL_COMPONENTS: List[str] = [
         "cpu",
