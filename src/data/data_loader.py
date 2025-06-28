@@ -2,8 +2,9 @@ import pandas as pd
 from pathlib import Path
 from typing import List
 
+# Combine all csv files into one dataframe
 def load_all_parts_data(data_path: Path) -> pd.DataFrame:
-    # Combine all csv files into one dataframe
+    
     all_files: List[Path] = list(data_path.glob("*.csv"))
     all_dfs: List[pd.DataFrame] = []
 
