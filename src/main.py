@@ -9,8 +9,8 @@ from pathlib import Path
 
 # --- Application Setup ---
 app = FastAPI(
-    title="PC Builder Assistant API",
-    description="An API to get custom PC build recommendations and explanations.",
+    title="Build a RIG API",
+    description="An API to get custom PC build recommendations from an AI-guided PC configurator.",
     version="0.1.0",
 )
 
@@ -73,6 +73,4 @@ def get_build(budget: float, usage: str = "gaming"):
 
 if __name__ == "__main__":
     import uvicorn
-    # This block allows running the API directly for development
-    # Use the command: python -m src.main
     uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True)
