@@ -1,7 +1,7 @@
 [project]
-name = "ai_project"
+name = "build-a-rig"
 version = "0.1.0"
-description = "A PC builder assistant powered by AI."
+description = "An AI-guided PC configurator."
 
 [build-system]
 requires = ["setuptools>=61.0"]
