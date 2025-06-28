@@ -3,9 +3,9 @@
 ## Phase 1: MVP Implementation
 
 ### Project Setup & Dependencies
-- [x] Create new Python project and repository
-- [x] Create venv and install necessary packages: `pandas`, `NumPy`, `FastAPI`, `Uvicorn`, `LangChain`, `OpenAI API client`, `Streamlit`
-- [x] Set up Git. Include  `.gitignore` for env files, and prepare a `.env` file for secrets (like `OPENAI_API_KEY`)
+- [x] Create a new Python project and repository
+- [x] Create a venv and install necessary packages: `pandas`, `NumPy`, `FastAPI`, `Uvicorn`, `LangChain`, `OpenAI API client`, `Streamlit`
+- [x] Set up Git. Include `.gitignore` for env files, and prepare a `.env` file for secrets (like `OPENAI_API_KEY`)
 - [x] Scaffold the project directories: `data/`, `src/`, `ui/`, `tests`, `notebooks`
 
 ### Data Ingestion & Preparation
