@@ -1,4 +1,4 @@
-# Build a RIG – AI-guided PC configurator
+# Build a RIG | AI-guided PC configurator
 
 This project is a web application that helps users build a custom PC. Users can specify a budget and primary usage (e.g., Gaming, Design), and the application will recommend a full set of compatible components. It also uses a Large Language Model (LLM) to provide a natural language explanation of why the build is a good fit for the user's needs.
 
