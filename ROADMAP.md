@@ -9,48 +9,48 @@
 - [x] Scaffold the project directories: `data/`, `src/`, `ui/`, `tests`, `notebooks`
 
 ### Data Ingestion & Preparation
-- [ ] Prepare the PC parts dataset and load it
-- [ ] Create or obtain a `parts.csv` file with columns like `part type`, `model name`, `price`, and `performance metric`
-- [ ] Use pandas to read the CSV into a DataFrame, ensuring correct data types
+- [x] Prepare the PC parts dataset and load it
+- [x] Create or obtain a `parts.csv` file with columns like `part type`, `model name`, `price`, and `performance metric`
+- [x] Use pandas to read the CSV into a DataFrame, ensuring correct data types
 - [ ] Set up a lightweight SQLite database
 
 ### Parts Recommendation Logic
-- [ ] Implement the core logic to suggest an optimal build
-- [ ] Filter available parts by the user's budget and criteria
-- [ ] Rank or select parts by a performance-to-price ratio using NumPy or pandas
-- [ ] Account for the usage parameter `gaming` / `design`
-- [ ] Ensure the total estimated price does not exceed the budget and handle cases where the budget is too low
-- [ ] Test the recommendation function with sample inputs to verify it returns sensible combinations
+- [x] Implement the core logic to suggest an optimal build
+- [x] Filter available parts by the user's budget and criteria
+- [x] Rank or select parts by a performance-to-price ratio using NumPy or pandas
+- [x] Account for the usage parameter `gaming` / `design`
+- [x] Ensure the total estimated price does not exceed the budget and handle cases where the budget is too low
+- [x] Test the recommendation function with sample inputs to verify it returns sensible combinations
 
 ### LLM Integration
-- [ ] Integrate a LLM to explain the recommended build
-- [ ] Use LangChain to manage the prompt and OpenAI API call
-- [ ] Design a prompt that provides context to the LLM (role, budget, usage, selected parts)
-- [ ] Implement the prompt using LangChain's prompt templates
-- [ ] Keep the explanation concise and user-focused
-- [ ] Test the LLM call with sample data to ensure coherent and factual output
-- [ ] Ensure sensitive info (API keys) are handled via env variables
+- [x] Integrate a LLM to explain the recommended build
+- [x] Use LangChain to manage the prompt and OpenAI API call
+- [x] Design a prompt that provides context to the LLM (role, budget, usage, selected parts)
+- [x] Implement the prompt using LangChain's prompt templates
+- [x] Keep the explanation concise and user-focused
+- [x] Test the LLM call with sample data to ensure coherent and factual output
+- [x] Ensure sensitive info (API keys) are handled via env variables
 
 ### API Backend (FastAPI)
-- [ ] Build a RESTful API to serve the recommendations
-- [ ] Set up a FastAPI app with an endpoint `GET /build`
-- [ ] Define data models using Pydantic for the response schema
-- [ ] Implement input validation for `budget` and `usage`
-- [ ] In the request handler, call the recommendation and LLM functions and return the results as JSON
-- [ ] Run the app with Uvicorn and test the endpoint manually
+- [x] Build a RESTful API to serve the recommendations
+- [x] Set up a FastAPI app with an endpoint `GET /build`
+- [x] Define data models using Pydantic for the response schema
+- [x] Implement input validation for `budget` and `usage`
+- [x] In the request handler, call the recommendation and LLM functions and return the results as JSON
+- [x] Run the app with Uvicorn and test the endpoint manually
 
 ### User Interface (Streamlit App)
-- [ ] Develop a simple, user-friendly front-end
-- [ ] Create a Streamlit app with inputs for budget and usage
-- [ ] On submission, call the FastAPI endpoint to fetch the build and explanation
-- [ ] Display the results clearly on the Streamlit page (e.g.`st.table` and markdown)
-- [ ] Ensure the UI is clear, handles errors, and is responsive
-- [ ] Manually test the full app flow
+- [x] Develop a simple, user-friendly front-end
+- [x] Create a Streamlit app with inputs for budget and usage
+- [x] On submission, call the FastAPI endpoint to fetch the build and explanation
+- [x] Display the results clearly on the Streamlit page (e.g.`st.table` and markdown)
+- [x] Ensure the UI is clear, handles errors, and is responsive
+- [x] Manually test the full app flow
 
 ### Testing & Documentation
-- [ ] Write basic unit tests for the parts recommendation logic using `pytest`
-- [ ] Add an integration test for the API using FastAPI's `TestClient`
-- [ ] Document the project in a `README.md` with setup instructions, example usage, and any assumptions made
+- [x] Write basic unit tests for the parts recommendation logic using `pytest`
+- [x] Add an integration test for the API using FastAPI's `TestClient`
+- [x] Document the project in a `README.md` with setup instructions, example usage, and any assumptions made
 
 ## Phase 2: Additional Improvements
 
