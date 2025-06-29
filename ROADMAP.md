@@ -12,7 +12,7 @@
 - [x] Prepare the PC parts dataset and load it
 - [x] Create or obtain a `parts.csv` file with columns like `part type`, `model name`, `price`, and `performance metric`
 - [x] Use pandas to read the CSV into a DataFrame, ensuring correct data types
-- [ ] Set up a lightweight SQLite database
+- [x] Set up a lightweight SQLite database
 
 ### Parts Recommendation Logic
 - [x] Implement the core logic to suggest an optimal build
@@ -55,13 +55,13 @@
 ## Phase 2: Additional Improvements
 
 ### Enhanced SQL Integration
-- [ ] Integrate a proper database layer `SQLite` or `PostgreSQL` to handle larger datasets more efficiently
-- [ ] Use SQL queries to fetch parts
+- [x] Integrate a proper database layer `SQLite` or `PostgreSQL` to handle larger datasets more efficiently
+- [x] Use SQL queries to fetch parts
 
 ### Advanced Recommendation Logic
-- [ ] Include compatibility checks (CPU socket vs. motherboard)
-- [ ] Use a more sophisticated algorithm to optimize budget allocation across components
-- [ ] Expand usage profiles (`Video Editing`, `Office Work`) with different part priorities
+- [x] Include compatibility checks (CPU socket vs. motherboard)
+- [x] Use a more sophisticated algorithm to optimize budget allocation across components
+- [x] Expand usage profiles (`Video Editing`, `Office Work`) with different part priorities
 
 ### Data and LLM Enhancements
 - [ ] Incorporate real-world data via external APIs or web-scraping for up-to-date prices
@@ -69,8 +69,8 @@
 - [ ] Allow the user to choose the level of detail in the explanation
 
 ### UI/UX Improvements
-- [ ] Add enhanced input validation and helpful hints in the Streamlit UI
-- [ ] Make the UI more interactive, allowing users to manually adjust the build
+- [x] Add enhanced input validation and helpful hints in the Streamlit UI
+- [x] Make the UI more interactive, allowing users to manually adjust the build
 - [ ] Deploy the app to a cloud service (Streamlit Community Cloud)
 
 ### Testing & DevOps
