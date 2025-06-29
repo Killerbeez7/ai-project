@@ -82,19 +82,26 @@ class Recommender:
         candidate_parts = {}
         for part_type in self.ESSENTIAL_COMPONENTS:
             part_budget = budget * allocations.get(part_type, 0)
+            
+            # Base query for parts within budget
+            possible_parts_df = self.parts_df[
+                (self.parts_df["type"] == part_type) & 
+                (self.parts_df["price"] <= part_budget)
+            ]
 
-            possible_parts = self.parts_df[
-                (self.parts_df["type"] == part_type)
-                & (self.parts_df["price"] <= part_budget)
-            ].nlargest(self.num_candidates, "score")
+            # Add pre-filter for CPUs to ensure they have socket data
+            if part_type == "cpu":
+                possible_parts_df = possible_parts_df.dropna(subset=["socket"])
 
-            if not possible_parts.empty:
-                candidate_parts[part_type] = possible_parts.to_dict("records")
+            top_candidates = possible_parts_df.nlargest(self.num_candidates, "score")
+            
+            if not top_candidates.empty:
+                candidate_parts[part_type] = top_candidates.to_dict('records')
 
-        # Cannot form a build if any part type has no candidates
         if len(candidate_parts) != len(self.ESSENTIAL_COMPONENTS):
-            return {}
+            return {} # Cannot form a build if any part type has no candidates
 
+        # Create all possible build combinations
         build_combinations = list(itertools.product(*candidate_parts.values()))
 
         best_build = {}
@@ -102,8 +109,7 @@ class Recommender:
 
         for combo in build_combinations:
             current_build = {part["type"]: part for part in combo}
-
-            # Validation and Scoring
+            
             total_cost = sum(part["price"] for part in current_build.values())
 
             if total_cost > budget:
