@@ -27,7 +27,7 @@ class BuildResponse(BaseModel):
 
 # --- Global Resources ---
 # Load data and initialize core components once at startup
-data_path = Path("data/csv")
+data_path = Path("data/parts.db")
 all_parts = load_all_parts_data(data_path)
 recommender = Recommender(all_parts)
 explainer = LLMExplainer()
