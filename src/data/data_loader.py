@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 import sqlite3
 from typing import List
+import numpy as np
 
 
 # Establishes a connection to the SQLite database.
@@ -48,6 +49,8 @@ def load_all_parts_data(db_path: Path) -> pd.DataFrame:
 
     # Concatenate all DataFrames into one
     combined_df = pd.concat(all_dfs, ignore_index=True)
+    # Replace numpy NaN with Python None for API compatibility
+    combined_df.replace({np.nan: None}, inplace=True)
     return combined_df
 
 
