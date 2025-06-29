@@ -4,6 +4,7 @@ from pathlib import Path
 
 from src.core.recommender import Recommender
 from src.data.data_loader import load_all_parts_data
+from src.config import ESSENTIAL_COMPONENTS
 
 # --- Test Fixtures ---
 
@@ -31,7 +32,7 @@ def test_recommendation_within_budget(recommender: Recommender):
     """
     budget = 2500.00
     usage = "gaming"
-    build = recommender.recommend(budget, usage)
+    build = recommender.recommend(budget, usage)[0]
 
     assert build, "A valid build should be returned for a reasonable budget."
     
@@ -44,12 +45,12 @@ def test_essential_components_are_present(recommender: Recommender):
     """
     budget = 2500.00
     usage = "gaming"
-    build = recommender.recommend(budget, usage)
+    build = recommender.recommend(budget, usage)[0]
     
     assert build, "A valid build should be returned."
 
     recommended_parts = build.keys()
-    for part_type in Recommender.ESSENTIAL_COMPONENTS:
+    for part_type in ESSENTIAL_COMPONENTS:
         assert part_type in recommended_parts, f"Essential component '{part_type}' is missing."
 
 def test_cpu_motherboard_socket_compatibility(recommender: Recommender):
@@ -58,7 +59,7 @@ def test_cpu_motherboard_socket_compatibility(recommender: Recommender):
     """
     budget = 2500.00
     usage = "gaming"
-    build = recommender.recommend(budget, usage)
+    build = recommender.recommend(budget, usage)[0]
     
     assert build and "cpu" in build and "motherboard" in build, "Build must contain a CPU and Motherboard."
     
@@ -75,7 +76,7 @@ def test_synergy_weights_for_gaming(recommender: Recommender):
     It does this by comparing the score-to-price ratio.
     """
     budget = 3000.00
-    build = recommender.recommend(budget, "gaming")
+    build = recommender.recommend(budget, "gaming")[0]
 
     assert build, "A valid gaming build should be returned."
     
@@ -89,7 +90,7 @@ def test_synergy_weights_for_gaming(recommender: Recommender):
     gpu_score_per_dollar = video_card["score"] / video_card["price"]
     cpu_score_per_dollar = cpu["score"] / cpu["price"]
     
-    gaming_weights = recommender.SYNERGY_WEIGHTS["gaming"]
+    gaming_weights = recommender.synergy_weights["gaming"]
     
     # The weighted score-per-dollar for the GPU should be higher, indicating it was prioritized.
     assert (gpu_score_per_dollar * gaming_weights["video_card"]) > (cpu_score_per_dollar * gaming_weights["cpu"])
@@ -100,7 +101,7 @@ def test_graceful_failure_with_low_budget(recommender: Recommender):
     """
     budget = 100.00  # An unrealistically low budget
     usage = "gaming"
-    build = recommender.recommend(budget, usage)
+    build = recommender.recommend(budget, usage)[0]
 
     assert build == {}, "Recommender should return an empty build for a very low budget."
 
