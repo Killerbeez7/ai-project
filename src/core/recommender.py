@@ -3,66 +3,24 @@ from pathlib import Path
 from typing import Dict, Any, List
 import itertools
 
-from data.data_loader import load_all_parts_data
+from src.data.data_loader import load_all_parts_data
+from src.config import (
+    ESSENTIAL_COMPONENTS,
+    BUDGET_ALLOCATIONS,
+    SYNERGY_WEIGHTS,
+    MINIMUM_SPEND,
+)
 
 
 # Recommends a PC build based on a given budget and usage profile
 class Recommender:
-    ESSENTIAL_COMPONENTS: List[str] = [
-        "cpu",
-        "motherboard",
-        "memory",
-        "internal_hard_drive",
-        "video_card",
-        "case",
-        "power_supply",
-    ]
-
-    BUDGET_ALLOCATIONS: Dict[str, Dict[str, float]] = {
-        "gaming": {
-            "cpu": 0.20,
-            "video_card": 0.40,
-            "motherboard": 0.10,
-            "memory": 0.10,
-            "internal_hard_drive": 0.08,
-            "power_supply": 0.07,
-            "case": 0.05,
-        },
-        "design": {
-            "cpu": 0.30,
-            "video_card": 0.25,
-            "motherboard": 0.10,
-            "memory": 0.15,
-            "internal_hard_drive": 0.10,
-            "power_supply": 0.05,
-            "case": 0.05,
-        },
-    }
-
-    SYNERGY_WEIGHTS: Dict[str, Dict[str, float]] = {
-        "gaming": {
-            "cpu": 0.8,
-            "video_card": 1.2,
-            "memory": 1.0,
-            "internal_hard_drive": 1.0,
-            "motherboard": 1.0,
-            "power_supply": 1.0,
-            "case": 1.0,
-        },
-        "design": {
-            "cpu": 1.2,
-            "video_card": 0.8,
-            "memory": 1.1,
-            "internal_hard_drive": 1.0,
-            "motherboard": 1.0,
-            "power_supply": 1.0,
-            "case": 1.0,
-        },
-    }
-
     def __init__(self, parts_df: pd.DataFrame, num_candidates: int = 5):
         self.parts_df = self._clean_data(parts_df)
         self.num_candidates = num_candidates
+        self.essential_components = ESSENTIAL_COMPONENTS
+        self.budget_allocations = BUDGET_ALLOCATIONS
+        self.synergy_weights = SYNERGY_WEIGHTS
+        self.minimum_spend = MINIMUM_SPEND
 
     # Remove '$' and convert 'price' to a numeric type
     def _clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -70,18 +28,21 @@ class Recommender:
             df["price"].astype(str).str.replace(r"\\$|,", "", regex=True),
             errors="coerce",
         )
+        # Also clean and convert the score column to a numeric type
+        df["score"] = pd.to_numeric(df["score"], errors="coerce")
+        
         df.dropna(subset=["price", "score"], inplace=True)
         return df
 
     def recommend(self, budget: float, usage: str) -> Dict[str, Dict[str, Any]]:
-        allocations = self.BUDGET_ALLOCATIONS.get(
-            usage, self.BUDGET_ALLOCATIONS["gaming"]
-        )
-        weights = self.SYNERGY_WEIGHTS.get(usage, self.SYNERGY_WEIGHTS["gaming"])
-
+        allocations = self.budget_allocations.get(usage, self.budget_allocations["gaming"])
+        weights = self.synergy_weights.get(usage, self.synergy_weights["gaming"])
+        
         candidate_parts = {}
-        for part_type in self.ESSENTIAL_COMPONENTS:
-            part_budget = budget * allocations.get(part_type, 0)
+        for part_type in self.essential_components:
+            percentage_budget = budget * allocations.get(part_type, 0)
+            min_spend = self.minimum_spend.get(part_type, 0)
+            part_budget = max(percentage_budget, min_spend)
             
             # Base query for parts within budget
             possible_parts_df = self.parts_df[
@@ -98,8 +59,8 @@ class Recommender:
             if not top_candidates.empty:
                 candidate_parts[part_type] = top_candidates.to_dict('records')
 
-        if len(candidate_parts) != len(self.ESSENTIAL_COMPONENTS):
-            return {} # Cannot form a build if any part type has no candidates
+        if len(candidate_parts) != len(self.essential_components):
+            return {}, {} # Return empty candidates dict as well
 
         # Create all possible build combinations
         build_combinations = list(itertools.product(*candidate_parts.values()))
@@ -110,6 +71,7 @@ class Recommender:
         for combo in build_combinations:
             current_build = {part["type"]: part for part in combo}
             
+            # Validation and Scoring
             total_cost = sum(part["price"] for part in current_build.values())
 
             if total_cost > budget:
@@ -119,9 +81,9 @@ class Recommender:
             mobo = current_build.get("motherboard", {})
             if cpu.get("socket") != mobo.get("socket"):
                 continue
-
+                
             build_score = sum(
-                part["score"] * weights.get(part_type, 1.0)
+                part["score"] * weights.get(part_type, 1.0) 
                 for part_type, part in current_build.items()
             )
 
@@ -129,7 +91,7 @@ class Recommender:
                 max_score = build_score
                 best_build = current_build
 
-        return best_build
+        return best_build, candidate_parts
 
 
 if __name__ == "__main__":
@@ -149,7 +111,7 @@ if __name__ == "__main__":
 
         test_budget = 5000.00
         test_usage = "gaming"
-        recommended_build = recommender.recommend(test_budget, test_usage)
+        recommended_build, _ = recommender.recommend(test_budget, test_usage)
 
         if recommended_build:
             print(f"--- Recommended Build for Gaming on a ${test_budget} budget ---")
