@@ -51,10 +51,10 @@ st.title("🤖 Build a RIG | AI-guided PC configurator")
 st.markdown("Welcome! Tell us your budget and primary use case, and our AI assistant will recommend the perfect PC build for you.")
 st.divider()
 
-# api config
-API_BASE_URL = "http://127.0.0.1:8000"
+# --- API Configuration ---
+API_BASE_URL = "https://build-a-rig.vercel.app"
 
-# user inputs
+# --- User Inputs ---
 st.header("1. Enter Your Requirements")
 col1, col2 = st.columns(2)
 with col1:
