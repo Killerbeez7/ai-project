@@ -19,11 +19,14 @@ class Part(BaseModel):
     name: str
     price: float
     type: str
+    score: float
+    socket: str | None = None
 
 class BuildResponse(BaseModel):
     build: Dict[str, Part]
     explanation: str
     total_cost: float
+    candidates: Dict[str, List[Part]]
 
 # --- Global Resources ---
 # Load data and initialize core components once at startup
@@ -44,8 +47,8 @@ def get_build(budget: float, usage: str = "gaming"):
             detail="Budget must be at least $500 to get a meaningful recommendation."
         )
 
-    # 1. Get the core recommendation
-    recommended_build = recommender.recommend(budget, usage)
+    # 1. Get the core recommendation and candidates
+    recommended_build, candidates = recommender.recommend(budget, usage)
 
     if not recommended_build:
         raise HTTPException(
@@ -65,10 +68,17 @@ def get_build(budget: float, usage: str = "gaming"):
         for part_type, part_data in recommended_build.items()
     }
 
+    # Ensure the candidates dictionary conforms to the Pydantic model
+    formatted_candidates = {
+        part_type: [Part(**part_data) for part_data in part_list]
+        for part_type, part_list in candidates.items()
+    }
+
     return BuildResponse(
         build=formatted_build,
         explanation=explanation,
         total_cost=total_cost,
+        candidates=formatted_candidates,
     )
 
 if __name__ == "__main__":
