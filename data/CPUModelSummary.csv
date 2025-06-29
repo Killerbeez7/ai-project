@@ -1,0 +1,156 @@
+CPU Name,Rating,Rank,Num Thread Execution units,Avg Speed,Stock Speed,Samples,Single Thread,maxTDP,turbospeed,cores per cpu,logicals per core,CPU First Seen in Charts,class,Other Names,URL (https://www.cpubenchmark.net/)
+[Dual CPU] AMD Ryzen Threadripper PRO 3995WX,123631,1,256,2700,2700,1,2652,280,4200,64,2,9/4/2020,Desktop,AMD Ryzen Threadripper PRO 3995WX 64-Cores,cpu.php?cpu=AMD+Ryzen+Threadripper+PRO+3995WX&id=3837&cpuCount=2
+[Dual CPU] AMD EPYC 7763,119707,2,256,2989,2450,2,2543,280,3500,64,2,3/19/2021,Server,AMD EPYC 7763 64-Core Processor,cpu.php?cpu=AMD+EPYC+7763&id=4207&cpuCount=2
+[Dual CPU] AMD EPYC 7643,115676,3,192,3640,2300,1,2689,225,3600,48,2,3/19/2021,Server,AMD EPYC 7643 48-Core Processor,cpu.php?cpu=AMD+EPYC+7643&id=4205&cpuCount=2
+[Dual CPU] AMD EPYC 7543,103492,4,128,2800,2800,1,2807,240,3700,32,2,6/16/2021,Server,AMD EPYC 7543 32-Core Processor,cpu.php?cpu=AMD+EPYC+7543&id=4404&cpuCount=2
+[Dual CPU] AMD EPYC 7H12,100817,5,256,2600,2600,2,2053,280,3300,64,2,12/1/2019,Server,AMD EPYC 7H12 64-Core Processor,cpu.php?cpu=AMD+EPYC+7H12&id=3618&cpuCount=2
+[Dual CPU] AMD EPYC 7742,99760,6,256,2250,2250,2,2143,225,3400,64,2,9/13/2019,Server,AMD EPYC 7742 64-Core Processor,cpu.php?cpu=AMD+EPYC+7742&id=3547&cpuCount=2
+[Dual CPU] AMD Ryzen Threadripper PRO 3975WX,98811,7,128,3500,3500,1,2676,280,4200,32,2,10/5/2020,Desktop,AMD Ryzen Threadripper PRO 3975WX 32-Cores,cpu.php?cpu=AMD+Ryzen+Threadripper+PRO+3975WX&id=3851&cpuCount=2
+[Dual CPU] AMD EPYC 7662,96504,8,256,2038,2000,4,2071,225,3300,64,2,4/6/2021,Server,AMD EPYC 7662 64-Core Processor,cpu.php?cpu=AMD+EPYC+7662&id=4251&cpuCount=2
+[Dual CPU] AMD EPYC 7713,95337,9,256,1996,2000,1,1931,225,3675,64,2,3/19/2021,Server,AMD EPYC 7713 64-Core Processor,cpu.php?cpu=AMD+EPYC+7713&id=4206&cpuCount=2
+[Dual CPU] AMD EPYC 74F3,94726,10,96,3194,3200,1,2963,240,4000,24,2,10/9/2021,Server,AMD EPYC 74F3 24-Core Processor,cpu.php?cpu=AMD+EPYC+74F3&id=4560&cpuCount=2
+[Dual CPU] Intel Xeon Platinum 8368 @ 2.40GHz,92054,11,152,3400,2400,1,2406,270,3400,38,2,4/29/2021,Server,Intel(R) Xeon(R) Platinum 8368 CPU @ 2.40GHz,cpu.php?cpu=Intel+Xeon+Platinum+8368+%40+2.40GHz&id=4307&cpuCount=2
+[Dual CPU] AMD EPYC 7702,91878,12,256,2000,2000,5,2072,200,3350,64,2,5/8/2020,Server,AMD EPYC 7702 64-Core Processor,cpu.php?cpu=AMD+EPYC+7702&id=3719&cpuCount=2
+[Dual CPU] Intel Xeon Platinum 8380 @ 2.30GHz,91484,13,160,3394,2300,1,2384,270,3400,40,2,8/17/2021,Server,Intel(R) Xeon(R) Platinum 8380 CPU @ 2.30GHz,cpu.php?cpu=Intel+Xeon+Platinum+8380+%40+2.30GHz&id=4483&cpuCount=2
+[Dual CPU] AMD EPYC 7552,91019,14,192,2196,2200,1,2040,200,3300,48,2,8/15/2020,Server,AMD EPYC 7552 48-Core Processor,cpu.php?cpu=AMD+EPYC+7552&id=3822&cpuCount=2
+[Dual CPU] Intel Xeon Platinum 8375C @ 2.90GHz,90419,15,128,3503,2900,1,2467,300,3500,32,2,8/17/2021,Server,Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz,cpu.php?cpu=Intel+Xeon+Platinum+8375C+%40+2.90GHz&id=4486&cpuCount=2
+AMD EPYC 7763,87767,16,128,2450,2450,12,2639,280,3500,64,2,3/19/2021,Server,AMD EPYC 7763 64-Core Processor,cpu.php?cpu=AMD+EPYC+7763&id=4207
+[Dual CPU] AMD EPYC 75F3,87760,17,128,2951,2950,2,2125,280,4000,32,2,6/24/2021,Server,AMD EPYC 75F3 32-Core Processor,cpu.php?cpu=AMD+EPYC+75F3&id=4416&cpuCount=2
+AMD EPYC 7J13,86006,18,128,2545,2550,46,2387,,3500,64,2,4/24/2021,Server,AMD EPYC 7J13 64-Core Processor,cpu.php?cpu=AMD+EPYC+7J13&id=4300
+AMD EPYC 7713,85947,19,128,2000,2000,29,2741,225,3675,64,2,3/19/2021,Server,AMD EPYC 7713 64-Core Processor,cpu.php?cpu=AMD+EPYC+7713&id=4206
+AMD Ryzen Threadripper PRO 3995WX,85208,20,128,2695,2700,43,2626,280,4200,64,2,9/4/2020,Desktop,AMD Ryzen Threadripper PRO 3995WX 64-Cores,cpu.php?cpu=AMD+Ryzen+Threadripper+PRO+3995WX&id=3837
+[Dual CPU] AMD EPYC 7453,84484,21,112,2750,2750,1,2534,225,3450,28,2,12/28/2021,Server,AMD EPYC 7453 28-Core Processor,cpu.php?cpu=AMD+EPYC+7453&id=4663&cpuCount=2
+[Dual CPU] Intel Xeon Platinum 8358 @ 2.60GHz,83847,22,128,3098,2600,3,2341,250,3400,32,2,8/18/2021,Server,Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz,cpu.php?cpu=Intel+Xeon+Platinum+8358+%40+2.60GHz&id=4493&cpuCount=2
+[Dual CPU] AMD EPYC 7532,82917,23,128,3307,2400,2,2160,200,3300,32,2,8/15/2021,Server,AMD EPYC 7532 32-Core Processor,cpu.php?cpu=AMD+EPYC+7532&id=4482&cpuCount=2
+AMD Ryzen Threadripper 3990X,81195,24,128,2965.514706,2900,142,2570,280,4300,64,2,2/12/2020,Desktop,AMD Ryzen Threadripper 3990X 64-Core Processor,cpu.php?cpu=AMD+Ryzen+Threadripper+3990X&id=3674
+[Dual CPU] AMD EPYC 7502,80226,25,128,2500,2500,8,2188,180,3350,32,2,11/21/2020,Server,AMD EPYC 7502 32-Core Processor,cpu.php?cpu=AMD+EPYC+7502&id=3880&cpuCount=2
+[Dual CPU] Intel Xeon Gold 6348 @ 2.60GHz,78496,26,112,3166,2600,3,2424,235,3500,28,2,8/18/2021,Server,Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz,cpu.php?cpu=Intel+Xeon+Gold+6348+%40+2.60GHz&id=4494&cpuCount=2
+AMD EPYC 7B13,77460,27,60,2249,2249,2,2564,,,60,1,9/22/2021,Server,AMD EPYC 7B13,cpu.php?cpu=AMD+EPYC+7B13&id=4535
+[Dual CPU] Intel Xeon Gold 6342 @ 2.80GHz,76580,28,96,3498,2800,4,2456,230,3500,24,2,8/17/2021,Server,Intel(R) Xeon(R) Gold 6342 CPU @ 2.80GHz,cpu.php?cpu=Intel+Xeon+Gold+6342+%40+2.80GHz&id=4485&cpuCount=2
+AMD EPYC 7643,76455,29,96,2421,2300,11,2695,225,3600,48,2,3/19/2021,Server,AMD EPYC 7643 48-Core Processor,cpu.php?cpu=AMD+EPYC+7643&id=4205
+[Dual CPU] AMD EPYC 7413,74417,30,96,2650,2650,5,2201,180,3600,24,2,5/21/2021,Server,AMD EPYC 7413 24-Core Processor,cpu.php?cpu=AMD+EPYC+7413&id=4346&cpuCount=2
+[Dual CPU] AMD EPYC 7542,72534,31,128,2984,2900,6,1996,225,3400,32,2,11/14/2019,Server,AMD EPYC 7542 32-Core Processor,cpu.php?cpu=AMD+EPYC+7542&id=3604&cpuCount=2
+[Dual CPU] Intel Xeon Gold 6336Y @ 2.40GHz,72276,32,96,3597,2400,2,2532,185,3600,24,2,8/17/2021,Server,Intel(R) Xeon(R) Gold 6336Y CPU @ 2.40GHz,cpu.php?cpu=Intel+Xeon+Gold+6336Y+%40+2.40GHz&id=4484&cpuCount=2
+AMD EPYC 7702,71677,33,128,1996,2000,15,2098,200,3350,64,2,5/8/2020,Server,AMD EPYC 7702 64-Core Processor,cpu.php?cpu=AMD+EPYC+7702&id=3719
+AMD EPYC 7662,71576,34,128,2000,2000,1,2054,225,3300,64,2,4/6/2021,Server,AMD EPYC 7662 64-Core Processor,cpu.php?cpu=AMD+EPYC+7662&id=4251
+AMD EPYC 7742,68749,35,128,2248.25,2250,10,2145,225,3400,64,2,9/13/2019,Server,AMD EPYC 7742 64-Core Processor,cpu.php?cpu=AMD+EPYC+7742&id=3547
+[Dual CPU] Intel Xeon Platinum 8352Y @ 2.20GHz,68643,36,128,2200,2200,1,1913,205,,32,2,7/31/2021,Server,Intel(R) Xeon(R) Platinum 8352Y CPU @ 2.20GHz,cpu.php?cpu=Intel+Xeon+Platinum+8352Y+%40+2.20GHz&id=4465&cpuCount=2
+AMD EPYC 75F3,68505,37,64,2944,2950,1,2775,280,4000,32,2,6/24/2021,Server,AMD EPYC 75F3 32-Core Processor,cpu.php?cpu=AMD+EPYC+75F3&id=4416
+AMD EPYC 7543P,67733,38,64,2800,2800,14,2758,225,3700,32,2,9/1/2021,Server,AMD EPYC 7543P 32-Core Processor,cpu.php?cpu=AMD+EPYC+7543P&id=4508
+[Dual CPU] Intel Xeon Platinum 8275CL @ 3.00GHz,66812,39,96,1199,3000,1,2375,,,24,2,12/7/2019,Server,Intel(R) Xeon(R) Platinum 8275CL CPU @ 3.00GHz,cpu.php?cpu=Intel+Xeon+Platinum+8275CL+%40+3.00GHz&id=3624&cpuCount=2
+[Dual CPU] AMD EPYC 7352,66239,40,96,2300,2300,1,2051,155,3200,24,2,8/23/2021,Server,AMD EPYC 7352 24-Core Processor,cpu.php?cpu=AMD+EPYC+7352&id=4500&cpuCount=2
+[Dual CPU] Intel Xeon Gold 5320 @ 2.20GHz,65979,41,104,3402,2200,1,2111,185,3400,26,2,11/2/2021,Server,Intel(R) Xeon(R) Gold 5320 CPU @ 2.20GHz,cpu.php?cpu=Intel+Xeon+Gold+5320+%40+2.20GHz&id=4594&cpuCount=2
+[Dual CPU] AMD EPYC 7F52,65659,42,64,3495,3500,3,2407,240,3900,16,2,6/12/2020,Server,AMD EPYC 7F52 16-Core Processor,cpu.php?cpu=AMD+EPYC+7F52&id=3753&cpuCount=2
+[Dual CPU] AMD EPYC 7313,65213,43,64,2994,3000,1,2749,155,3700,16,2,7/14/2021,Server,AMD EPYC 7313 16-Core Processor,cpu.php?cpu=AMD+EPYC+7313&id=4443&cpuCount=2
+AMD EPYC 7R32,64727,44,96,2361,,4,1922,,3300,48,2,12/24/2020,Server,"AMD EPYC 7R32, AMD EPYC 7R32 48-Core Processor",cpu.php?cpu=AMD+EPYC+7R32&id=3894
+[Dual CPU] Intel Xeon Platinum 8280 @ 2.70GHz,64291,45,112,2693,2700,3,2356,205,4000,28,2,1/27/2020,Server,Intel(R) Xeon(R) Platinum 8280 CPU @ 2.70GHz,cpu.php?cpu=Intel+Xeon+Platinum+8280+%40+2.70GHz&id=3662&cpuCount=2
+AMD Ryzen Threadripper 3970X,64030,46,64,3716.969203,3700,623,2697,280,4500,32,2,12/6/2019,Desktop,AMD Ryzen Threadripper 3970X 32-Core Processor,cpu.php?cpu=AMD+Ryzen+Threadripper+3970X&id=3623
+[Dual CPU] AMD Ryzen Threadripper PRO 3955WX,63885,47,64,3900,3900,2,2439,280,4300,16,2,9/25/2020,Desktop,AMD Ryzen Threadripper PRO 3955WX 16-Cores,cpu.php?cpu=AMD+Ryzen+Threadripper+PRO+3955WX&id=3846&cpuCount=2
+[Dual CPU] Intel Xeon Gold 6258R @ 2.70GHz,63218,48,112,2639,2700,7,2333,205,4000,28,2,10/20/2020,Server,Intel(R) Xeon(R) Gold 6258R CPU @ 2.70GHz,cpu.php?cpu=Intel+Xeon+Gold+6258R+%40+2.70GHz&id=3860&cpuCount=2
+AMD Ryzen Threadripper PRO 3975WX,62801,49,64,3486,3500,71,2666,280,4200,32,2,10/5/2020,Desktop,AMD Ryzen Threadripper PRO 3975WX 32-Cores,cpu.php?cpu=AMD+Ryzen+Threadripper+PRO+3975WX&id=3851
+[Dual CPU] Intel Xeon Gold 6248R @ 3.00GHz,62712,50,96,3246,3000,4,2264,205,4000,24,2,5/18/2020,Server,Intel(R) Xeon(R) Gold 6248R CPU @ 3.00GHz,cpu.php?cpu=Intel+Xeon+Gold+6248R+%40+3.00GHz&id=3732&cpuCount=2
+Intel Xeon Platinum 8380 @ 2.30GHz,62317,51,80,3394,2300,1,2385,270,3400,40,2,8/17/2021,Server,Intel(R) Xeon(R) Platinum 8380 CPU @ 2.30GHz,cpu.php?cpu=Intel+Xeon+Platinum+8380+%40+2.30GHz&id=4483
+[Dual CPU] Intel Xeon Platinum 8180 @ 2.50GHz,61751,52,112,2500,2500,1,2289,205,3800,28,2,3/3/2018,Server,Intel(R) Xeon(R) Platinum 8180 CPU @ 2.50GHz,cpu.php?cpu=Intel+Xeon+Platinum+8180+%40+2.50GHz&id=3207&cpuCount=2
+[Dual CPU] Intel Xeon Silver 4316 @ 2.30GHz,60955,53,80,3397,2300,1,2382,150,3400,20,2,8/13/2021,Server,Intel(R) Xeon(R) Silver 4316 CPU @ 2.30GHz,cpu.php?cpu=Intel+Xeon+Silver+4316+%40+2.30GHz&id=4481&cpuCount=2
+AMD EPYC 74F3,60948,54,48,3200,3200,6,2975,240,4000,24,2,10/9/2021,Server,AMD EPYC 74F3 24-Core Processor,cpu.php?cpu=AMD+EPYC+74F3&id=4560
+[Dual CPU] AMD EPYC 7402,58436,55,96,2798,2800,5,1761,180,3350,24,2,5/5/2020,Server,AMD EPYC 7402 24-Core Processor,cpu.php?cpu=AMD+EPYC+7402&id=3713&cpuCount=2
+[Dual CPU] Intel Xeon Gold 6230R @ 2.10GHz,58230,56,104,2733,2100,3,2351,150,4000,26,2,2/10/2021,Server,Intel(R) Xeon(R) Gold 6230R CPU @ 2.10GHz,cpu.php?cpu=Intel+Xeon+Gold+6230R+%40+2.10GHz&id=4070&cpuCount=2
+AMD EPYC 7702P,58119,57,128,1998.285714,2000,7,2126,200,3350,64,2,9/19/2019,Server,AMD EPYC 7702P 64-Core Processor,cpu.php?cpu=AMD+EPYC+7702P&id=3555
+AMD EPYC 7443P,58047,58,48,3130,2850,38,3002,200,4000,24,2,6/10/2021,Server,AMD EPYC 7443P 24-Core Processor,cpu.php?cpu=AMD+EPYC+7443P&id=4391
+[Dual CPU] Intel Xeon Platinum 8171M @ 2.60GHz,57780,59,104,2600,2600,4,2109,165,3700,26,2,3/28/2018,Server,Intel(R) Xeon(R) Platinum 8171M CPU @ 2.60GHz,cpu.php?cpu=Intel+Xeon+Platinum+8171M+%40+2.60GHz&id=3220&cpuCount=2
+AMD EPYC 7513,57408,60,64,2600,2600,5,2289,200,3650,32,2,6/9/2021,Server,AMD EPYC 7513 32-Core Processor,cpu.php?cpu=AMD+EPYC+7513&id=4383
+AMD EPYC 7542,56728,61,64,2801,2900,4,2207,225,3400,32,2,11/14/2019,Server,AMD EPYC 7542 32-Core Processor,cpu.php?cpu=AMD+EPYC+7542&id=3604
+[Dual CPU] Intel Xeon Gold 5220R @ 2.20GHz,56592,62,96,2197,2200,2,2394,150,4000,24,2,3/26/2021,Server,Intel(R) Xeon(R) Gold 5220R CPU @ 2.20GHz,cpu.php?cpu=Intel+Xeon+Gold+5220R+%40+2.20GHz&id=4217&cpuCount=2
+[Dual CPU] Intel Xeon Gold 6240R @ 2.40GHz,56476,63,96,2397,2400,2,2388,165,4000,24,2,5/26/2020,Server,Intel(R) Xeon(R) Gold 6240R CPU @ 2.40GHz,cpu.php?cpu=Intel+Xeon+Gold+6240R+%40+2.40GHz&id=3739&cpuCount=2
+[Dual CPU] AMD EPYC 7601,55888,64,128,2199,2200,9,1794,180,2700,32,2,12/8/2017,Server,AMD EPYC 7601 32-Core Processor,cpu.php?cpu=AMD+EPYC+7601&id=3142&cpuCount=2
+[Dual CPU] AMD EPYC 7551,55708,65,128,1996,2000,14,1696,180,3000,32,2,9/21/2017,Server,AMD EPYC 7551 32-Core Processor,cpu.php?cpu=AMD+EPYC+7551&id=3089&cpuCount=2
+AMD EPYC 7532,55358,66,64,2400,2400,1,2137,200,3300,32,2,8/15/2021,Server,AMD EPYC 7532 32-Core Processor,cpu.php?cpu=AMD+EPYC+7532&id=4482
+[Dual CPU] Intel Xeon Platinum 8260M @ 2.30GHz,55297,67,96,2346,2300,1,2472,165,3900,24,2,10/15/2020,Server,Intel(R) Xeon(R) Platinum 8260M CPU @ 2.30GHz,cpu.php?cpu=Intel+Xeon+Platinum+8260M+%40+2.30GHz&id=3858&cpuCount=2
+[Dual CPU] AMD EPYC 7401,55057,68,96,2000,2000,2,1834,155,3000,24,2,11/7/2017,Server,AMD EPYC 7401 24-Core Processor,cpu.php?cpu=AMD+EPYC+7401&id=3119&cpuCount=2
+[Dual CPU] Intel Xeon Gold 6254 @ 3.10GHz,54869,69,72,3092,3100,4,2355,200,4000,18,2,6/26/2019,Server,Intel(R) Xeon(R) Gold 6254 CPU @ 3.10GHz,cpu.php?cpu=Intel+Xeon+Gold+6254+%40+3.10GHz&id=3482&cpuCount=2
+AMD Ryzen Threadripper 3960X,54735,70,48,3823.945455,3800,566,2679,280,4500,24,2,12/1/2019,Desktop,AMD Ryzen Threadripper 3960X 24-Core Processor,cpu.php?cpu=AMD+Ryzen+Threadripper+3960X&id=3617
+Intel Xeon Platinum 8358 @ 2.60GHz,54416,71,64,3398,2600,2,2382,250,3400,32,2,8/18/2021,Server,Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz,cpu.php?cpu=Intel+Xeon+Platinum+8358+%40+2.60GHz&id=4493
+[Dual CPU] Intel Xeon Gold 6326 @ 2.90GHz,53600,72,64,3296,2900,3,2363,185,3500,16,2,12/16/2021,Server,Intel(R) Xeon(R) Gold 6326 CPU @ 2.90GHz,cpu.php?cpu=Intel+Xeon+Gold+6326+%40+2.90GHz&id=4651&cpuCount=2
+[Quad CPU] Intel Xeon E5-4667 v4 @ 2.20GHz,53402,73,144,2194,2200,1,1584,135,2900,18,2,1/15/2021,Server,Intel(R) Xeon(R) CPU E5-4667 v4 @ 2.20GHz,cpu.php?cpu=Intel+Xeon+E5-4667+v4+%40+2.20GHz&id=3902&cpuCount=4
+[Dual CPU] Intel Xeon Gold 6238R @ 2.20GHz,53331,74,112,2197,2200,2,1875,165,4000,28,2,2/23/2021,Server,Intel(R) Xeon(R) Gold 6238R CPU @ 2.20GHz,cpu.php?cpu=Intel+Xeon+Gold+6238R+%40+2.20GHz&id=4132&cpuCount=2
+,,,,,,,,,,,,,,,
+<snip, over 3000 lines removed from sample>,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+Intel Celeron 1200MHz,159,4000,1,1200,1200,2,212,,-1,1,1,2/27/2009,Unknown,Intel(R) Celeron(TM) CPU 1200MHz,cpu.php?cpu=Intel+Celeron+1200MHz&id=717
+Intel Atom E3815 @ 1.46GHz,159,4001,1,1464,1460,8,238,5,-1,1,1,5/16/2014,Desktop,"Intel(R) Atom(TM) CPU E3815 @ 1.46GHz, Intel(R) Atom(TM) CPU  E3815  @ 1.46GHz",cpu.php?cpu=Intel+Atom+E3815+%40+1.46GHz&id=2233
+Intel Atom Z670 @ 1.50GHz,158,4002,2,1500,1500,4,95,3,-1,1,2,6/27/2011,Laptop,Intel(R) Atom(TM) CPU Z670 @ 1.50GHz,cpu.php?cpu=Intel+Atom+Z670+%40+1.50GHz&id=630
+Intel Pentium 4 2.66GHz,157,4003,1,2660,2660,197,431,66.1,-1,1,1,1/11/2009,Desktop,Intel(R) Pentium(R) 4 CPU 2.66GHz,cpu.php?cpu=Intel+Pentium+4+2.66GHz&id=1071
+Intel Pentium 4 2.20GHz,157,4004,1,2200,2200,17,379,57.1,-1,1,1,1/6/2009,Desktop,Intel(R) Pentium(R) 4 CPU 2.20GHz,cpu.php?cpu=Intel+Pentium+4+2.20GHz&id=1065
+Intel Pentium III Mobile 1200MHz,156,4005,1,1200,1200,4,216,,-1,1,1,2/27/2009,Laptop,Intel(R) Pentium(R) III Mobile CPU 1200MHz,cpu.php?cpu=Intel+Pentium+III+Mobile+1200MHz&id=1151
+Intel Pentium M 1000MHz,156,4006,1,1000,1000,4,222,7,-1,1,1,3/21/2009,Laptop,Intel(R) Pentium(R) M processor 1000MHz,cpu.php?cpu=Intel+Pentium+M+1000MHz&id=1163
+Intel Celeron M 440 @ 1.86GHz,155,4007,1,1862.5,1860,49,440,27,-1,1,1,12/5/2008,Laptop,Intel(R) Celeron(R) M CPU 440 @ 1.86GHz,cpu.php?cpu=Intel+Celeron+M+440+%40+1.86GHz&id=702
+Intel Pentium M 1200MHz,155,4008,1,1200,1200,2,166,12,-1,1,1,4/16/2009,Laptop,Intel(R) Pentium(R) M processor 1200MHz,cpu.php?cpu=Intel+Pentium+M+1200MHz&id=1165
+Intel Pentium 4 3.83GHz,154,4009,2,3830,3830,1,237,,,1,2,5/6/2018,Desktop,Intel(R) Pentium(R) 4 CPU 3.83GHz,cpu.php?cpu=Intel+Pentium+4+3.83GHz&id=3256
+AMD Athlon 64 2000+,154,4010,1,1000,1000,2,173,8,-1,1,1,11/20/2013,Unknown,AMD Athlon(tm) 64 Processor 2000+,cpu.php?cpu=AMD+Athlon+64+2000%2B&id=2096
+Intel Celeron 2.66GHz,154,4011,1,2663,2660,132,417,,-1,1,1,2/25/2009,Unknown,Intel(R) Celeron(R) CPU 2.66GHz,cpu.php?cpu=Intel+Celeron+2.66GHz&id=642
+Mobile Intel Celeron 2.40GHz,154,4012,1,2400,2400,3,376,,-1,1,1,2/25/2009,Laptop,Mobile Intel(R) Celeron(R) CPU 2.40GHz,cpu.php?cpu=Mobile+Intel+Celeron+2.40GHz&id=1363
+Intel Atom N435 @ 1.33GHz,153,4013,2,1330,1330,4,220,,-1,1,2,10/3/2011,Unknown,Intel(R) Atom(TM) CPU N435 @ 1.33GHz,cpu.php?cpu=Intel+Atom+N435+%40+1.33GHz&id=617
+Intel Xeon 2.00GHz,152,4014,2,2000,2000,2,259,,-1,1,2,2/27/2009,Server,Intel(R) Xeon(TM) CPU 2.00GHz,cpu.php?cpu=Intel+Xeon+2.00GHz&id=1315
+Intel Pentium 4 2.26GHz,151,4015,1,2260,2260,42,409,58,-1,1,1,2/13/2009,Desktop,Intel(R) Pentium(R) 4 CPU 2.26GHz,cpu.php?cpu=Intel+Pentium+4+2.26GHz&id=1066
+Intel Pentium 4 2.93GHz,150,4016,1,2930,2930,28,269,,-1,1,1,2/27/2009,Desktop,Intel(R) Pentium(R) 4 CPU 2.93GHz,cpu.php?cpu=Intel+Pentium+4+2.93GHz&id=1073
+VIA C7-D 1800MHz,150,4017,1,1800,1800,48,147,20,-1,1,1,2/15/2011,Desktop,VIA C7-D Processor 1800MHz,cpu.php?cpu=VIA+C7-D+1800MHz&id=1413
+Intel Celeron M 1.00GHz,149,4018,1,1000,1000,4,197,,-1,1,1,2/24/2009,Laptop,Intel(R) Celeron(R) M processor 1.00GHz,cpu.php?cpu=Intel+Celeron+M+1.00GHz&id=706
+Intel Celeron 2.30GHz,148,4019,1,2300,2300,3,364,,-1,1,1,2/25/2009,Unknown,Intel(R) Celeron(R) CPU 2.30GHz,cpu.php?cpu=Intel+Celeron+2.30GHz&id=1467
+Mobile Intel Celeron 2.20GHz,147,4020,1,2200,2200,2,355,,-1,1,1,4/8/2009,Laptop,Mobile Intel(R) Celeron(R) CPU 2.20GHz,cpu.php?cpu=Mobile+Intel+Celeron+2.20GHz&id=1362
+Mobile Intel Pentium III - M 1200MHz,146,4021,1,1200,1200,4,185,22,-1,1,1,3/20/2009,Laptop,Mobile Intel(R) Pentium(R) III CPU - M 1200MHz,cpu.php?cpu=Mobile+Intel+Pentium+III+-+M+1200MHz&id=1382
+VIA C7-M 6300MHz,145,4022,1,1600,1600,2,121,,-1,1,1,1/27/2011,Unknown,VIA C7-M Processor 6300MHz,cpu.php?cpu=VIA+C7-M+6300MHz&id=1416
+Mobile Intel Pentium 4 - M 2.20GHz,143,4023,1,2200,2200,9,388,,-1,1,1,2/25/2009,Laptop,Mobile Intel(R) Pentium(R) 4 - M CPU 2.20GHz,cpu.php?cpu=Mobile+Intel+Pentium+4+-+M+2.20GHz&id=1369
+Intel Celeron 2.60GHz,143,4024,1,2600,2600,34,353,,-1,1,1,2/24/2009,Unknown,Intel(R) Celeron(R) CPU 2.60GHz,cpu.php?cpu=Intel+Celeron+2.60GHz&id=641
+Intel Celeron 2.40GHz,143,4025,1,2400,2400,129,397,,-1,1,1,12/11/2008,Unknown,Intel(R) Celeron(R) CPU 2.40GHz,cpu.php?cpu=Intel+Celeron+2.40GHz&id=638
+ARM Cortex-A7 2 Core 1080 MHz,142,4026,2,1080,1080,2,200,,,2,1,5/16/2021,Unknown,ARM Cortex-A7 2 Core 1080 MHz,cpu.php?cpu=ARM+Cortex-A7+2+Core+1080+MHz&id=4337
+Intel Pentium M 900MHz,141,4027,1,900,900,2,200,7,-1,1,1,5/25/2009,Laptop,Intel(R) Pentium(R) M processor 900MHz,cpu.php?cpu=Intel+Pentium+M+900MHz&id=1175
+Mobile Intel Pentium 4 - M 2.40GHz,139,4028,1,2400,2400,6,317,,-1,1,1,3/3/2009,Laptop,Mobile Intel(R) Pentium(R) 4 - M CPU 2.40GHz,cpu.php?cpu=Mobile+Intel+Pentium+4+-+M+2.40GHz&id=1370
+Intel Celeron 1000MHz,139,4029,1,1000,1000,2,174,,-1,1,1,5/27/2009,Unknown,Intel(R) Celeron(TM) CPU 1000MHz,cpu.php?cpu=Intel+Celeron+1000MHz&id=1648
+Intel Celeron M 420 @ 1.60GHz,139,4030,1,1600,1600,34,391,27,-1,1,1,2/28/2009,Laptop,Intel(R) Celeron(R) M CPU 420 @ 1.60GHz,cpu.php?cpu=Intel+Celeron+M+420+%40+1.60GHz&id=700
+Intel Celeron 2.20GHz,139,4031,1,2200,2200,7,349,,-1,1,1,3/6/2009,Unknown,Intel(R) Celeron(R) CPU 2.20GHz,cpu.php?cpu=Intel+Celeron+2.20GHz&id=636
+Mobile Intel Pentium 4 - M 2.00GHz,138,4032,1,2000,2000,4,345,,-1,1,1,2/28/2009,Laptop,Mobile Intel(R) Pentium(R) 4 - M CPU 2.00GHz,cpu.php?cpu=Mobile+Intel+Pentium+4+-+M+2.00GHz&id=1368
+Intel Pentium 4 Mobile 1.90GHz,136,4033,1,1900,1900,2,282,,-1,1,1,7/1/2009,Laptop,Intel(R) Pentium(R) 4 Mobile CPU 1.90GHz,cpu.php?cpu=Intel+Pentium+4+Mobile+1.90GHz&id=1692
+VIA Esther 1500MHz,135,4034,1,1500,1500,3,112,,-1,1,1,1/6/2011,Unknown,VIA Esther processor 1500MHz,cpu.php?cpu=VIA+Esther+1500MHz&id=1420
+Intel Pentium 4 2.00GHz,133,4035,1,2000,2000,65,349,54.3,-1,1,1,1/6/2009,Desktop,Intel(R) Pentium(R) 4 CPU 2.00GHz,cpu.php?cpu=Intel+Pentium+4+2.00GHz&id=1064
+Mobile Intel Celeron 2.00GHz,133,4036,1,2000,2000,2,290,,-1,1,1,3/14/2009,Laptop,Mobile Intel(R) Celeron(R) CPU 2.00GHz,cpu.php?cpu=Mobile+Intel+Celeron+2.00GHz&id=1361
+Intel Pentium 4 Mobile 2.00GHz,132,4037,1,2000,2000,3,310,,-1,1,1,6/13/2009,Laptop,Intel(R) Pentium(R) 4 Mobile CPU 2.00GHz,cpu.php?cpu=Intel+Pentium+4+Mobile+2.00GHz&id=1087
+Intel Pentium 4 2.40GHz,131,4038,1,2400,2400,245,360,59.8,-1,1,1,12/13/2008,Desktop,"Intel(R) Pentium(R) 4 CPU 2.40GHz, Intel(R) Pentium(R) 4 Family CPU 2.40GHz",cpu.php?cpu=Intel+Pentium+4+2.40GHz&id=1067
+Intel Core Solo U1400 @ 1.20GHz,130,4039,1,1200,1200,4,365,5.5,-1,1,1,3/15/2009,Laptop,"Genuine Intel(R) CPU U1400 @ 1.20GHz, Intel(R) Core(TM) Solo CPU U1400 @ 1.20GHz",cpu.php?cpu=Intel+Core+Solo+U1400+%40+1.20GHz&id=904
+Mobile Intel Pentium III - M 933MHz,130,4040,1,933,933,2,177,20.1,-1,1,1,7/24/2009,Laptop,Mobile Intel(R) Pentium(R) III CPU - M 933MHz,cpu.php?cpu=Mobile+Intel+Pentium+III+-+M+933MHz&id=1742
+AMD G-T44R,130,4041,1,1198.5,1200,7,328,9,-1,1,1,8/30/2011,Laptop,AMD G-T44R Processor,cpu.php?cpu=AMD+G-T44R&id=266
+Intel Core Solo U1300 @ 1.06GHz,127,4042,1,1061.5,1060,6,340,6,-1,1,1,8/12/2009,Laptop,"Genuine Intel(R) CPU U1300 @ 1.06GHz, Intel(R) Core(TM) Solo CPU U1300 @ 1.06GHz",cpu.php?cpu=Intel+Core+Solo+U1300+%40+1.06GHz&id=593
+Intel Celeron M 443 @ 1.20GHz,125,4043,1,1200,1200,2,288,5.5,-1,1,1,3/25/2009,Laptop,Intel(R) Celeron(R) M CPU 443 @ 1.20GHz,cpu.php?cpu=Intel+Celeron+M+443+%40+1.20GHz&id=1641
+Intel Celeron 2.00GHz,125,4044,1,2000,2000,40,338,52.8,-1,1,1,2/25/2009,Desktop,Intel(R) Celeron(R) CPU 2.00GHz,cpu.php?cpu=Intel+Celeron+2.00GHz&id=633
+Intel Celeron M 410 @ 1.46GHz,123,4045,1,1460,1460,45,301,27,-1,1,1,3/1/2009,Laptop,Intel(R) Celeron(R) M CPU 410 @ 1.46GHz,cpu.php?cpu=Intel+Celeron+M+410+%40+1.46GHz&id=699
+Intel Celeron M 900MHz,123,4046,1,900,900,13,155,,-1,1,1,2/28/2009,Laptop,Intel(R) Celeron(R) M processor 900MHz,cpu.php?cpu=Intel+Celeron+M+900MHz&id=715
+Intel Atom Z520 @ 1.33GHz,122,4047,2,1331.5,1330,22,151,2,-1,1,2,5/1/2009,Laptop,"Intel(R) Atom(TM) CPU Z520 @ 1.33GHz, Intel(R) Core(TM) CPU Z520 @ 1.33GHz",cpu.php?cpu=Intel+Atom+Z520+%40+1.33GHz&id=625
+Mobile Intel Pentium 4 - M 1.70GHz,121,4048,1,1700,1700,5,297,,-1,1,1,3/7/2009,Laptop,Mobile Intel(R) Pentium(R) 4 - M CPU 1.70GHz,cpu.php?cpu=Mobile+Intel+Pentium+4+-+M+1.70GHz&id=1365
+Mobile Intel Celeron 1.80GHz,121,4049,1,1800,1800,2,280,66.1,-1,1,1,7/14/2009,Laptop,Mobile Intel(R) Celeron(R) CPU 1.80GHz,cpu.php?cpu=Mobile+Intel+Celeron+1.80GHz&id=1360
+AMD G-T40R,120,4050,1,1000,1000,4,327,5.5,-1,1,1,10/4/2018,Laptop,AMD G-T40R Processor,cpu.php?cpu=AMD+G-T40R&id=3328
+Mobile Intel Pentium 4 - M 1.80GHz,119,4051,1,1800,1800,5,297,,-1,1,1,3/5/2009,Laptop,Mobile Intel(R) Pentium(R) 4 - M CPU 1.80GHz,cpu.php?cpu=Mobile+Intel+Pentium+4+-+M+1.80GHz&id=1366
+Intel Pentium III Mobile 800MHz,119,4052,1,800,800,2,155,,-1,1,1,4/28/2009,Laptop,Intel(R) Pentium(R) III Mobile CPU 800MHz,cpu.php?cpu=Intel+Pentium+III+Mobile+800MHz&id=1700
+Mobile Intel Celeron 1.70GHz,118,4053,1,1700,1700,2,254,,-1,1,1,4/7/2009,Laptop,Mobile Intel(R) Celeron(R) CPU 1.70GHz,cpu.php?cpu=Mobile+Intel+Celeron+1.70GHz&id=1734
+Intel Pentium 4 Mobile 1.60GHz,116,4054,1,1600,1600,2,254,,-1,1,1,2/27/2009,Laptop,Intel(R) Pentium(R) 4 Mobile CPU 1.60GHz,cpu.php?cpu=Intel+Pentium+4+Mobile+1.60GHz&id=1084
+VIA C7-M 1600MHz,116,4055,1,1600,1600,12,124,15,-1,1,1,1/30/2011,Laptop,VIA C7-M Processor 1600MHz,cpu.php?cpu=VIA+C7-M+1600MHz&id=1415
+Intel Pentium 4 1.80GHz,115,4056,1,1800,1800,40,318,68.1,-1,1,1,12/31/2008,Desktop,Intel(R) Pentium(R) 4 CPU 1.80GHz,cpu.php?cpu=Intel+Pentium+4+1.80GHz&id=1056
+Intel Pentium 4 Mobile 1.80GHz,114,4057,1,1800,1800,2,195,,-1,1,1,5/6/2009,Laptop,Intel(R) Pentium(R) 4 Mobile CPU 1.80GHz,cpu.php?cpu=Intel+Pentium+4+Mobile+1.80GHz&id=1086
+Intel Pentium 4 1800MHz,114,4058,1,1800,1800,3,317,68.1,-1,1,1,2/24/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1800MHz,cpu.php?cpu=Intel+Pentium+4+1800MHz&id=1063
+Intel Celeron 1100MHz,113,4059,1,1100,1100,2,183,,-1,1,1,4/27/2009,Unknown,Intel(R) Celeron(TM) CPU 1100MHz,cpu.php?cpu=Intel+Celeron+1100MHz&id=716
+VIA C7-M 1200MHz,112,4060,1,1200,1200,6,93,,-1,1,1,1/15/2011,Unknown,VIA C7-M Processor 1200MHz,cpu.php?cpu=VIA+C7-M+1200MHz&id=1414
+Intel Celeron B710 @ 1.60GHz,106,4061,1,1600,1600,1,101,35,-1,1,1,8/15/2015,Laptop,Intel(R) Celeron(R) CPU B710 @ 1.60GHz,cpu.php?cpu=Intel+Celeron+B710+%40+1.60GHz&id=2574
+Intel Pentium 4 1.90GHz,104,4062,1,1900,1900,6,292,69.2,-1,1,1,2/27/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1.90GHz,cpu.php?cpu=Intel+Pentium+4+1.90GHz&id=1057
+VIA Nehemiah,101,4063,1,1200,1200,2,75,,-1,1,1,1/17/2011,Unknown,VIA Nehemiah,cpu.php?cpu=VIA+Nehemiah&id=1425
+Intel Celeron 1.70GHz,101,4064,1,1700,1700,31,190,,-1,1,1,2/26/2009,Unknown,Intel(R) Celeron(R) CPU 1.70GHz,cpu.php?cpu=Intel+Celeron+1.70GHz&id=631
+Intel Pentium 4 1700MHz,100,4065,1,1700,1700,5,266,64,-1,1,1,3/1/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1700MHz,cpu.php?cpu=Intel+Pentium+4+1700MHz&id=1062
+Intel Pentium III Mobile 866MHz,99,4066,1,866,866,2,132,,-1,1,1,4/17/2009,Laptop,Intel(R) Pentium(R) III Mobile CPU 866MHz,cpu.php?cpu=Intel+Pentium+III+Mobile+866MHz&id=1152
+Intel Celeron 1.80GHz,96,4067,1,1800,1800,17,307,66.1,-1,1,1,3/8/2009,Desktop,Intel(R) Celeron(R) CPU 1.80GHz,cpu.php?cpu=Intel+Celeron+1.80GHz&id=632
+VIA Esther 1000MHz,95,4068,1,1000,1000,2,82,,-1,1,1,2/19/2011,Unknown,VIA Esther processor 1000MHz,cpu.php?cpu=VIA+Esther+1000MHz&id=1418
+ARM Cortex-A7 2 Core 960 MHz,93,4069,2,960,960,2,140,,,2,1,3/12/2021,Unknown,ARM Cortex-A7 2 Core 960 MHz,cpu.php?cpu=ARM+Cortex-A7+2+Core+960+MHz&id=4183
+VIA Eden 1200MHz,93,4070,1,1200,1200,1,97,7,-1,1,1,5/7/2017,Laptop,VIA Eden Processor 1200MHz,cpu.php?cpu=VIA+Eden+1200MHz&id=3013
+Intel Pentium 4 1.70GHz,86,4071,1,1700,1700,20,254,64,-1,1,1,3/4/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1.70GHz,cpu.php?cpu=Intel+Pentium+4+1.70GHz&id=1055
+Intel Pentium 4 1.50GHz,86,4072,1,1500,1500,8,228,57.8,-1,1,1,3/15/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1.50GHz,cpu.php?cpu=Intel+Pentium+4+1.50GHz&id=1053
+Intel Pentium 4 1.60GHz,84,4073,1,1600,1600,12,225,38,-1,1,1,2/24/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1.60GHz,cpu.php?cpu=Intel+Pentium+4+1.60GHz&id=1054
+Intel Pentium 4 1400MHz,83,4074,1,1400,1400,2,180,54.7,-1,1,1,3/1/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1400MHz,cpu.php?cpu=Intel+Pentium+4+1400MHz&id=1059
+Intel Pentium 4 1500MHz,81,4075,1,1500,1500,7,223,57.8,-1,1,1,3/3/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1500MHz,cpu.php?cpu=Intel+Pentium+4+1500MHz&id=1060
+VIA Eden 1000MHz,80,4076,1,1000,1000,1,83,5,-1,1,1,12/15/2017,Laptop,VIA Eden Processor 1000MHz,cpu.php?cpu=VIA+Eden+1000MHz&id=3147
+Intel Pentium 4 1300MHz,77,4077,1,1300,1300,4,203,51.6,-1,1,1,3/3/2009,Desktop,Intel(R) Pentium(R) 4 CPU 1300MHz,cpu.php?cpu=Intel+Pentium+4+1300MHz&id=1058
