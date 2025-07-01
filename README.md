@@ -2,13 +2,13 @@
 
 This project is a web application that helps users build a custom PC. Users can specify a budget and primary usage (e.g., Gaming, Design), and the application will recommend a full set of compatible components. It also uses a Large Language Model (LLM) to provide a natural language explanation of why the build is a good fit for the user's needs.
 
-## 🌐 Live Demo
+## Live Demo
 
 - **Frontend (UI):** Coming soon
 - **Backend (API):** [https://build-a-rig.onrender.com](https://build-a-rig.onrender.com)
 - **API Documentation:** [https://build-a-rig.onrender.com/v1/docs](https://build-a-rig.onrender.com/v1/docs)
 
-## ✨ Features
+## Features
 
 - **AI-Powered Recommendations:** Uses OpenAI GPT models to generate personalized PC build explanations
 - **Component Compatibility:** Automatically ensures CPU and motherboard socket compatibility
@@ -18,7 +18,7 @@ This project is a web application that helps users build a custom PC. Users can 
 - **Cold Start Handling:** Graceful loading states during server startup
 - **API Versioning:** Future-proof REST API with v1 namespace
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Backend:** FastAPI, Uvicorn (Python 3.11)
 - **Frontend:** Streamlit
@@ -102,7 +102,7 @@ streamlit run ui/app.py
 ```
 This will open the user interface in your default web browser.
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 build-a-rig/
@@ -146,7 +146,7 @@ curl "https://build-a-rig.onrender.com/v1/build?budget=1500&usage=gaming"
 curl "https://build-a-rig.onrender.com/v1/build?budget=2000&usage=design"
 ```
 
-## 🌟 Key Features Explained
+## Key Features Explained
 
 ### Cold Start Handling
 The UI automatically handles server cold starts with:
@@ -166,7 +166,7 @@ The recommendation engine:
 - Optimizes price-to-performance ratios
 - Considers usage-specific requirements (gaming vs. productivity)
 
-## 🚀 Deployment
+## Deployment
 
 This project is configured for deployment on [Render.com](https://render.com) using the included `render.yaml` blueprint.
 
