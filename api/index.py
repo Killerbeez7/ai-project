@@ -1,20 +1,24 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Dict, Any, List
-
-from core.recommender import Recommender
-from chains.llm_explainer import LLMExplainer
-from data.data_loader import load_all_parts_data
 from pathlib import Path
+import sys
 
-# --- Application Setup ---
+# Add the parent directory to the path so we can import from src
+sys.path.append(str(Path(__file__).parent.parent))
+
+from src.core.recommender import Recommender
+from src.chains.llm_explainer import LLMExplainer
+from src.data.data_loader import load_all_parts_data
+
+# Create FastAPI application
 app = FastAPI(
     title="Build a RIG API",
-    description="An API to get custom PC build recommendations from an AI-guided PC configurator.",
-    version="0.1.0",
+    description="An AI-guided PC configurator that recommends custom PC builds based on budget and usage.",
+    version="1.0.0",
 )
 
-# --- Data Models (Pydantic) ---
+# Data Models
 class Part(BaseModel):
     name: str
     price: float
@@ -28,18 +32,33 @@ class BuildResponse(BaseModel):
     total_cost: float
     candidates: Dict[str, List[Part]]
 
-# --- Global Resources ---
-# Load data and initialize core components once at startup
-data_path = Path("data/parts.db")
+# Initialize global resources
+data_path = Path(__file__).parent.parent / "data" / "parts.db"
 all_parts = load_all_parts_data(data_path)
 recommender = Recommender(all_parts)
 explainer = LLMExplainer()
 
-# --- API Endpoints ---
+@app.get("/")
+def root():
+    """Root endpoint for the API."""
+    return {"message": "Build a RIG API is running!", "docs": "/docs"}
+
+@app.get("/health")
+def health():
+    """Health check endpoint for Render."""
+    return {"status": "healthy"}
+
 @app.get("/build", response_model=BuildResponse)
 def get_build(budget: float, usage: str = "gaming"):
     """
     Generates a PC build recommendation based on a budget and usage profile.
+    
+    Args:
+        budget: The budget for the PC build in USD
+        usage: The primary use case (gaming, design, video_editing, office_work)
+    
+    Returns:
+        BuildResponse: Complete build recommendation with explanation and alternatives
     """
     if budget < 500:
         raise HTTPException(
@@ -47,7 +66,7 @@ def get_build(budget: float, usage: str = "gaming"):
             detail="Budget must be at least $500 to get a meaningful recommendation."
         )
 
-    # 1. Get the core recommendation and candidates
+    # Get the core recommendation and candidates
     recommended_build, candidates = recommender.recommend(budget, usage)
 
     if not recommended_build:
@@ -56,10 +75,10 @@ def get_build(budget: float, usage: str = "gaming"):
             detail=f"Could not generate a complete build for a ${budget} budget. Please try a higher amount."
         )
 
-    # 2. Generate the explanation for the build
+    # Generate the explanation for the build
     explanation = explainer.generate_explanation(budget, usage, recommended_build)
     
-    # 3. Calculate total cost and format the response
+    # Calculate total cost and format the response
     total_cost = sum(part["price"] for part in recommended_build.values())
     
     # Ensure the build dictionary conforms to the Pydantic model
@@ -79,8 +98,4 @@ def get_build(budget: float, usage: str = "gaming"):
         explanation=explanation,
         total_cost=total_cost,
         candidates=formatted_candidates,
-    )
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run("src.main:app", host="0.0.0.0", port=8000, reload=True)
+    ) 

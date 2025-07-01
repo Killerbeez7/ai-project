@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+openai
+langchain
+langchain-openai
+pandas
+numpy
+python-dotenv 

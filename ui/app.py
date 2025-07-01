@@ -1,5 +1,6 @@
 import streamlit as st
 import requests
+import os
 
 # page config
 st.set_page_config(
@@ -52,7 +53,10 @@ st.markdown("Welcome! Tell us your budget and primary use case, and our AI assis
 st.divider()
 
 # API Configuration
-API_BASE_URL = "https://build-a-rig.vercel.app"
+try:
+    API_URL = st.secrets["API_URL"]
+except (KeyError, FileNotFoundError):
+    API_URL = os.environ.get("API_URL", "http://localhost:8000")
 
 # User Inputs
 st.header("1. Enter Your Requirements")
@@ -78,7 +82,7 @@ st.divider()
 # recommendation trigger
 if st.button("🚀 Generate My PC Build", type="primary", use_container_width=True):
     st.session_state.initial_budget = budget  # Store the budget for comparison
-    api_url = f"{API_BASE_URL}/build"
+    api_url = f"{API_URL}/build"
     params = {"budget": budget, "usage": usage}
 
     with st.spinner("🔍 Analyzing parts, running combinations, and asking the AI for advice..."):

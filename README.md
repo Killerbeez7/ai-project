@@ -31,10 +31,17 @@ source .venv/bin/activate
 
 ### 2. Install Dependencies
 
-Install all required packages from the `requirements.txt` file.
+Install dependencies for both the API and UI:
 
 ```bash
-pip install -r requirements.txt
+# Install API dependencies
+pip install -r api/requirements.txt
+
+# Install UI dependencies  
+pip install -r ui/requirements.txt
+
+# Or install all development dependencies (includes everything)
+pip install -r requirements.dev.txt
 ```
 
 ### 3. Set Up Environment Variables
@@ -65,7 +72,7 @@ This application consists of two main parts that must be run in separate termina
 In your first terminal, run the following command from the project root to start the FastAPI server:
 
 ```bash
-python -m src.main
+uvicorn api.index:app --reload
 ```
 The API will be available at `http://127.0.0.1:8000`. You can see the interactive documentation at `http://127.0.0.1:8000/docs`.
 

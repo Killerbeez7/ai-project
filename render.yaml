@@ -1,0 +1,26 @@
+services:
+  # FastAPI ------------------------------------------------
+  - type: web
+    name: build-a-rig-api
+    env: python
+    rootDir: api
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn index:app --host 0.0.0.0 --port $PORT
+    autoDeploy: true
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+
+  # Streamlit ---------------------------------------------
+  - type: web
+    name: build-a-rig-ui
+    env: python
+    rootDir: ui
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+    autoDeploy: true
+    envVars:
+      - key: API_URL
+        fromService:
+          name: build-a-rig-api
+          type: web 
