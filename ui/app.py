@@ -1,6 +1,7 @@
 import streamlit as st
 import requests
 import os
+import time
 
 # page config
 st.set_page_config(
@@ -79,32 +80,69 @@ with col2:
 
 st.divider()
 
-# recommendation trigger
-if st.button("🚀 Generate My PC Build", type="primary", use_container_width=True):
-    st.session_state.initial_budget = budget  # Store the budget for comparison
-    api_url = f"{API_URL}/v1/build"
+# helper function for API calls with cold start handling
+def call_api_with_retry(budget, usage):
+    """
+    Calls the API with retry logic to handle cold starts gracefully.
+    Tries immediately, then retries after 5 seconds if we get a 502 error.
+    """
     params = {"budget": budget, "usage": usage}
-
-    with st.spinner("🔍 Analyzing parts, running combinations, and asking the AI for advice..."):
+    api_url = f"{API_URL}/v1/build"
+    
+    for attempt, delay in enumerate([(0, "🔍 Analyzing parts, running combinations, and asking the AI for advice..."), 
+                                     (5, "⏳ API is warming up (cold start), please wait...")], 1):
+        sleep_time, message = delay
+        
+        if sleep_time > 0:
+            # Show different message for retry
+            with st.spinner(message):
+                time.sleep(sleep_time)
+        
         try:
-            response = requests.get(api_url, params=params, timeout=60)
-            response.raise_for_status()
-            data = response.json()
-            
-            st.session_state.current_build = data.get("build", {})
-            st.session_state.candidates = data.get("candidates", {})
-            st.session_state.explanation = data.get("explanation", "")
-            update_build_and_cost()
+            with st.spinner(message):
+                response = requests.get(api_url, params=params, timeout=30)
+                response.raise_for_status()
+                return response.json()  # SUCCESS!
+                
         except requests.HTTPError as http_err:
+            # Check if it's a 502 error and we haven't retried yet
+            if response.status_code == 502 and attempt == 1:
+                st.info("🔄 Server is starting up (cold start). Retrying in 5 seconds...")
+                continue  # Try again with delay
+            
+            # For other HTTP errors or if we've already retried
             try:
                 error_detail = http_err.response.json().get("detail", "An unknown error occurred.")
             except:
                 error_detail = http_err.response.text
-            st.error(f"Error from API: {error_detail}")
+            raise Exception(f"API Error ({response.status_code}): {error_detail}")
+            
         except requests.RequestException as e:
-            st.error(f"Failed to connect to the recommendation API: {e}")
-        except Exception as e:
-            st.error(f"An unexpected error occurred: {e}")
+            if attempt == 1:
+                st.info("🔄 Connection issue. Retrying in 5 seconds...")
+                continue  # Try again with delay
+            raise Exception(f"Failed to connect to the recommendation API: {e}")
+    
+    raise Exception("API request failed after retries")
+
+# recommendation trigger
+if st.button("🚀 Generate My PC Build", type="primary", use_container_width=True):
+    st.session_state.initial_budget = budget  # Store the budget for comparison
+    
+    try:
+        data = call_api_with_retry(budget, usage)
+        
+        st.session_state.current_build = data.get("build", {})
+        st.session_state.candidates = data.get("candidates", {})
+        st.session_state.explanation = data.get("explanation", "")
+        update_build_and_cost()
+        
+        # Show success message briefly
+        st.success("✅ Your PC build has been generated!")
+        
+    except Exception as exc:
+        st.error(f"❌ {exc}")
+        st.info("💡 If this persists, the API might be experiencing issues. Please try again in a few minutes.")
 
 # display interactive build
 if st.session_state.current_build:
