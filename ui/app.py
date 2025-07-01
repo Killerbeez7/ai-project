@@ -89,28 +89,29 @@ def call_api_with_retry(budget, usage):
     params = {"budget": budget, "usage": usage}
     api_url = f"{API_URL}/v1/build"
     
+    status_container = st.empty()
+    
     for attempt, delay in enumerate([(0, "🔍 Analyzing parts, running combinations, and asking the AI for advice..."), 
                                      (5, "⏳ API is warming up (cold start), please wait...")], 1):
         sleep_time, message = delay
         
         if sleep_time > 0:
-            # Show different message for retry
-            with st.spinner(message):
-                time.sleep(sleep_time)
+            status_container.info("🔄 Server is starting up (cold start). Retrying in 5 seconds...")
+            time.sleep(sleep_time)
         
         try:
-            with st.spinner(message):
-                response = requests.get(api_url, params=params, timeout=30)
-                response.raise_for_status()
-                return response.json()  # SUCCESS!
+            with status_container:
+                with st.spinner(message):
+                    response = requests.get(api_url, params=params, timeout=30)
+                    response.raise_for_status()
+                    status_container.empty()
+                    return response.json()  # SUCCESS!
                 
         except requests.HTTPError as http_err:
-            # Check if it's a 502 error and we haven't retried yet
             if response.status_code == 502 and attempt == 1:
-                st.info("🔄 Server is starting up (cold start). Retrying in 5 seconds...")
-                continue  # Try again with delay
+                continue
             
-            # For other HTTP errors or if we've already retried
+            status_container.empty()
             try:
                 error_detail = http_err.response.json().get("detail", "An unknown error occurred.")
             except:
@@ -119,15 +120,20 @@ def call_api_with_retry(budget, usage):
             
         except requests.RequestException as e:
             if attempt == 1:
-                st.info("🔄 Connection issue. Retrying in 5 seconds...")
+                status_container.info("🔄 Connection issue. Retrying in 5 seconds...")
                 continue  # Try again with delay
+            status_container.empty()
             raise Exception(f"Failed to connect to the recommendation API: {e}")
     
+    status_container.empty()
     raise Exception("API request failed after retries")
 
 # recommendation trigger
 if st.button("🚀 Generate My PC Build", type="primary", use_container_width=True):
     st.session_state.initial_budget = budget  # Store the budget for comparison
+    
+    # Clear any previous messages
+    message_container = st.empty()
     
     try:
         data = call_api_with_retry(budget, usage)
@@ -137,11 +143,11 @@ if st.button("🚀 Generate My PC Build", type="primary", use_container_width=Tr
         st.session_state.explanation = data.get("explanation", "")
         update_build_and_cost()
         
-        # Show success message briefly
-        st.success("✅ Your PC build has been generated!")
+        # Show success message
+        message_container.success("✅ Your PC build has been generated!")
         
     except Exception as exc:
-        st.error(f"❌ {exc}")
+        message_container.error(f"❌ {exc}")
         st.info("💡 If this persists, the API might be experiencing issues. Please try again in a few minutes.")
 
 # display interactive build
