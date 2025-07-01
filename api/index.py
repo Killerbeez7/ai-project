@@ -16,6 +16,8 @@ app = FastAPI(
     title="Build a RIG API",
     description="An AI-guided PC configurator that recommends custom PC builds based on budget and usage.",
     version="1.0.0",
+    docs_url="/v1/docs",
+    redoc_url="/v1/redoc",
 )
 
 # Data Models
@@ -41,14 +43,14 @@ explainer = LLMExplainer()
 @app.get("/")
 def root():
     """Root endpoint for the API."""
-    return {"message": "Build a RIG API is running!", "docs": "/docs"}
+    return {"message": "Build a RIG API is running!", "docs": "/v1/docs", "version": "v1"}
 
 @app.get("/health")
 def health():
     """Health check endpoint for Render."""
     return {"status": "healthy"}
 
-@app.get("/build", response_model=BuildResponse)
+@app.get("/v1/build", response_model=BuildResponse)
 def get_build(budget: float, usage: str = "gaming"):
     """
     Generates a PC build recommendation based on a budget and usage profile.

@@ -82,7 +82,7 @@ st.divider()
 # recommendation trigger
 if st.button("🚀 Generate My PC Build", type="primary", use_container_width=True):
     st.session_state.initial_budget = budget  # Store the budget for comparison
-    api_url = f"{API_URL}/build"
+    api_url = f"{API_URL}/v1/build"
     params = {"budget": budget, "usage": usage}
 
     with st.spinner("🔍 Analyzing parts, running combinations, and asking the AI for advice..."):

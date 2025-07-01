@@ -74,7 +74,7 @@ In your first terminal, run the following command from the project root to start
 ```bash
 uvicorn api.index:app --reload
 ```
-The API will be available at `http://127.0.0.1:8000`. You can see the interactive documentation at `http://127.0.0.1:8000/docs`.
+The API will be available at `http://127.0.0.1:8000`. You can see the interactive documentation at `http://127.0.0.1:8000/v1/docs`.
 
 ### 2. Run the Frontend UI
 
