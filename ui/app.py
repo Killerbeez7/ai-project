@@ -186,7 +186,7 @@ def extract_budget(message: str) -> float:
             budget_str = match.group(1).replace(',', '')
             try:
                 budget = float(budget_str)
-                if 500 <= budget <= 10000:
+                if 800 <= budget <= 10000:
                     return budget
             except:
                 continue
@@ -218,7 +218,7 @@ def format_build_response(build_data: dict, original_message: str, budget: float
     explanation = build_data.get('explanation', '')
     
     if not build:
-        return f"I couldn't generate a complete build for ${budget} and {usage} use. Try increasing your budget to at least $600!"
+        return f"I couldn't generate a complete build for ${budget} and {usage} use. Try increasing your budget to at least $800 (minimum working build cost: $798)!"
     
     response = f"Perfect! I've designed a ${budget} {usage} build for you:\n\n"
     response += f"## 🖥️ Your Custom Build (${total_cost:.2f})\n\n"
@@ -292,10 +292,11 @@ Just tell me something like: *"I want a $1500 gaming PC"* or *"I need a computer
 💰 **What's your budget for this build?**
 
 Some popular ranges:
-• **$800-1200** - Great entry level
-• **$1200-1800** - Excellent performance  
-• **$1800-3000** - High-end/enthusiast
-• **$3000+** - No compromises
+• **$800** - Minimum working build (real cost: $798)
+• **$1000-1200** - Entry level gaming
+• **$1400-1700** - Excellent performance  
+• **$1800-2500** - High-end gaming & creative
+• **$2500+** - Enthusiast builds
 
 Just tell me like: *"$1500"* or *"around $2000"* or *"1700$ max"*"""
     
@@ -340,11 +341,19 @@ def get_agent_response(user_message: str) -> str:
                     if response.status_code == 200:
                         data = response.json()
                         return format_build_response(data, user_message, budget, usage)
+                    elif response.status_code == 404:
+                        return f"💸 I found your ${budget:.0f} budget for {usage}, but unfortunately that's too low for a complete PC. \n\n💡 **For PC builds, try:**\n• **$800** - Minimum working build (our data shows $798 actual cost)\n• **$1000-1200** - Entry level gaming\n• **$1400-1700** - Great 1080p/1440p gaming\n• **$1800+** - High-end gaming\n\nTry something like: *'I want a $1200 gaming PC'*"
+                    elif response.status_code == 400:
+                        try:
+                            error_data = response.json()
+                            return f"❌ {error_data.get('detail', 'Budget too low')}\n\nTry asking for at least $800 - that's the minimum for a complete PC!"
+                        except:
+                            return f"❌ Your ${budget:.0f} budget is too low. Try asking for at least $800 - that's the minimum for a complete PC!"
                     elif response.status_code == 502 and attempt < max_retries - 1:
                         time.sleep(5)
                         continue
                     else:
-                        return f"I found a ${budget} budget for {usage}, but couldn't generate a build right now. Status: {response.status_code}. Please try again!"
+                        return f"🔧 I found a ${budget:.0f} budget for {usage}, but encountered an issue (Status: {response.status_code}). Please try again or use the Build Configurator tab!"
                         
                 except requests.exceptions.Timeout:
                     if attempt < max_retries - 1:
@@ -401,7 +410,7 @@ with tab1:
     
     with col1:
         # Update session state when values change
-        new_budget = st.slider("💰 Budget", 500, 10000, st.session_state.current_budget, 50)
+        new_budget = st.slider("💰 Budget", 800, 10000, st.session_state.current_budget, 50)
         if new_budget != st.session_state.current_budget:
             st.session_state.current_budget = new_budget
         
@@ -467,8 +476,40 @@ with tab1:
             message_container.success("✅ Your PC build has been generated!")
             
         except Exception as exc:
-            message_container.error(f"❌ {exc}")
-            st.info("💡 If this persists, the API might be experiencing issues. Please try again in a few minutes.")
+            error_msg = str(exc)
+            
+            # Handle specific API errors with helpful guidance
+            if "Budget must be at least $800" in error_msg:
+                message_container.error("💸 **Budget Too Low!**")
+                st.warning("""
+                **Your budget is too low for a complete PC build.**
+                
+                📊 **Our data shows the minimum working build costs $798**
+                
+                💡 **For great builds, try:**
+                • **$800** - Minimum working build
+                • **$1000-1200** - Entry level gaming
+                • **$1400-1700** - Excellent 1080p/1440p gaming  
+                • **$1800-2500** - High-end gaming & creative work
+                • **$2500+** - Enthusiast builds
+                
+                🎯 **Tip:** The slider minimum is now set to $800 based on real data.
+                """)
+            elif "Could not generate a complete build" in error_msg:
+                message_container.error("🔧 **Unable to Generate Build**")
+                st.warning("""
+                **Couldn't create a complete build with your current settings.**
+                
+                💡 **Try these solutions:**
+                • **Increase your budget** by $200-500
+                • **Switch usage type** (some builds work better for different purposes)
+                • **Try the AI Chat** for personalized recommendations
+                
+                🤖 **Quick fix:** Go to the AI Chat tab and ask: *"I want a $1200 gaming PC"*
+                """)
+            else:
+                message_container.error(f"❌ {error_msg}")
+                st.info("💡 If this persists, try the AI Chat tab or check if the API is experiencing issues.")
     
     # Display interactive build if available
     if st.session_state.current_build:
