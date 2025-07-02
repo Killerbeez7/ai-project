@@ -353,7 +353,7 @@ def get_agent_response(user_message: str) -> str:
                         time.sleep(5)
                         continue
                     else:
-                        return f"🔧 I found a ${budget:.0f} budget for {usage}, but encountered an issue (Status: {response.status_code}). Please try again or use the Build Configurator tab!"
+                        return f"🔧 I found a ${budget:.0f} budget for {usage}, but encountered an issue (Status: {response.status_code}). Please try again or use the [Build Configurator](/?tab=build)!"
                         
                 except requests.exceptions.Timeout:
                     if attempt < max_retries - 1:
@@ -399,6 +399,18 @@ if st.session_state.last_build_generated and st.session_state.total_cost > 0:
         <em style="color: {'#28a745' if budget_under and 'under' in budget_under else '#dc3545'};">{budget_under}</em>
     </div>
     """, unsafe_allow_html=True)
+
+# Tab state management
+if 'active_tab' not in st.session_state:
+    st.session_state.active_tab = 0
+
+# Check if user came from query parameters (e.g., ?tab=chat)
+query_params = st.query_params
+if "tab" in query_params:
+    if query_params["tab"] == "chat":
+        st.session_state.active_tab = 1
+    elif query_params["tab"] == "build":
+        st.session_state.active_tab = 0
 
 # Stylish tabs
 tab1, tab2 = st.tabs(["📋 Build Configurator", "💬 AI Chat Assistant"])
@@ -446,16 +458,28 @@ with tab1:
         st.write("**⚡ Quick Presets:**")
         
         if st.button("🏆 Best Value Gaming", use_container_width=True):
+            # Maintain build tab state
+            st.session_state.active_tab = 0
+            st.query_params["tab"] = "build"
+            
             st.session_state.current_budget = 1200
             st.session_state.current_usage = "gaming"
             st.rerun()
             
         if st.button("🎨 Creative Workstation", use_container_width=True):
+            # Maintain build tab state
+            st.session_state.active_tab = 0
+            st.query_params["tab"] = "build"
+            
             st.session_state.current_budget = 2500
             st.session_state.current_usage = "design"
             st.rerun()
             
         if st.button("💼 Office Productivity", use_container_width=True):
+            # Maintain build tab state
+            st.session_state.active_tab = 0
+            st.query_params["tab"] = "build"
+            
             st.session_state.current_budget = 800
             st.session_state.current_usage = "office_work"
             st.rerun()
@@ -505,11 +529,11 @@ with tab1:
                 • **Switch usage type** (some builds work better for different purposes)
                 • **Try the AI Chat** for personalized recommendations
                 
-                🤖 **Quick fix:** Go to the AI Chat tab and ask: *"I want a $1200 gaming PC"*
+                🤖 **Quick fix:** [Switch to AI Chat](/?tab=chat) and ask: *"I want a $1200 gaming PC"*
                 """)
             else:
                 message_container.error(f"❌ {error_msg}")
-                st.info("💡 If this persists, try the AI Chat tab or check if the API is experiencing issues.")
+                st.info("💡 If this persists, try the [AI Chat tab](/?tab=chat) or check if the API is experiencing issues.")
     
     # Display interactive build if available
     if st.session_state.current_build:
@@ -580,6 +604,10 @@ with tab2:
     
     # Chat input with real AI processing
     if prompt := st.chat_input("Ask about PC builds, components, or get recommendations..."):
+        # Set active tab to chat and update query params
+        st.session_state.active_tab = 1
+        st.query_params["tab"] = "chat"
+        
         # Add user message to history
         st.session_state.chat_messages.append({"role": "user", "content": prompt})
         
@@ -597,6 +625,10 @@ with tab2:
     
     # Clear chat button
     if st.button("🗑️ Clear Chat"):
+        # Maintain chat tab state
+        st.session_state.active_tab = 1
+        st.query_params["tab"] = "chat"
+        
         st.session_state.chat_messages = [
             {"role": "assistant", "content": "👋 Hi! I'm your PC building expert. Tell me about what kind of computer you want to build - what's your budget and what will you use it for?"}
         ]
