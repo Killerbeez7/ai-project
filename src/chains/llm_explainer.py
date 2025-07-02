@@ -1,4 +1,5 @@
 from typing import Dict, Any
+import os
 
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
@@ -27,9 +28,13 @@ class LLMExplainer:
     def __init__(self, model_name: str = "gpt-4o-mini"):
         load_dotenv()
         self.model_name = model_name
-        self._llm = ChatOpenAI(model=self.model_name, temperature=0.7)
-        self._prompt = PromptTemplate.from_template(self.PROMPT_TEMPLATE)
-        self._chain = self._prompt | self._llm | StrOutputParser()
+        self.development_mode = os.getenv("DEVELOPMENT_MODE", "false").lower() == "true"
+        
+        if not self.development_mode:
+            # Only initialize OpenAI in production mode
+            self._llm = ChatOpenAI(model=self.model_name, temperature=0.7)
+            self._prompt = PromptTemplate.from_template(self.PROMPT_TEMPLATE)
+            self._chain = self._prompt | self._llm | StrOutputParser()
 
     # Formats the build dictionary into a readable string for the prompt
     def _format_build_details(self, build: Dict[str, Any]) -> str:
@@ -42,10 +47,40 @@ class LLMExplainer:
             )
         return "\n".join(details)
 
+    def _get_mock_explanation(self, budget: float, usage: str, build: Dict[str, Any]) -> str:
+        """Generate a mock explanation for development mode to avoid API costs."""
+        total_cost = sum(part.get("price", 0) for part in build.values())
+        savings = budget - total_cost
+        
+        usage_tips = {
+            "gaming": "This build prioritizes GPU performance for excellent gaming at 1080p/1440p with high settings.",
+            "design": "This configuration balances CPU and RAM for smooth creative workflows in Photoshop and design software.",
+            "video_editing": "The powerful CPU and ample RAM ensure smooth video editing and fast render times.",
+            "office_work": "This efficient build provides excellent performance for productivity tasks while staying budget-friendly."
+        }
+        
+        explanation = f"""🎯 **DEVELOPMENT MODE - Mock Explanation**
+
+This ${budget} {usage} build is perfectly optimized for your needs! {usage_tips.get(usage, 'This build offers great performance for your intended use case.')}
+
+The selected components work together harmoniously - from the reliable CPU to the capable GPU. We've made smart choices to maximize performance within your budget."""
+        
+        if savings > 0:
+            explanation += f" Plus, you're saving ${savings:.0f} which leaves room for future upgrades!"
+        
+        explanation += "\n\n💡 *Note: This is a development mode response. Set DEVELOPMENT_MODE=false for real AI explanations.*"
+        
+        return explanation
+
     # Generates an explanation for the given build
     def generate_explanation(
         self, budget: float, usage: str, build: Dict[str, Any]
     ) -> str:
+        if self.development_mode:
+            # Return mock explanation to avoid API costs
+            return self._get_mock_explanation(budget, usage, build)
+        
+        # Production mode - use real OpenAI API
         build_details = self._format_build_details(build)
         explanation = self._chain.invoke(
             {
