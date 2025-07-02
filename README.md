@@ -166,6 +166,13 @@ The recommendation engine:
 - Optimizes price-to-performance ratios
 - Considers usage-specific requirements (gaming vs. productivity)
 
+### LangChain Integration
+Advanced AI agent capabilities:
+- **Function Calling Tools:** PC recommender exposed as LangChain tools
+- **Conversational Agent:** Natural language PC building consultation
+- **Multi-turn Conversations:** Context-aware dialogue for complex requirements
+- **Component Research:** AI-powered component option exploration
+
 ## Deployment
 
 This project is configured for deployment on [Render.com](https://render.com) using the included `render.yaml` blueprint.
