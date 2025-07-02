@@ -531,7 +531,7 @@ with tab2:
     st.markdown("Have a conversation about your PC building needs. Ask questions, get recommendations, and refine your build!")
     
     # Display chat history
-    chat_container = st.container(height=450)
+    chat_container = st.container()
     with chat_container:
         for message in st.session_state.chat_messages:
             with st.chat_message(message["role"]):
