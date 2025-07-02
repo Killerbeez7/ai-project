@@ -62,10 +62,10 @@ def get_build(budget: float, usage: str = "gaming"):
     Returns:
         BuildResponse: Complete build recommendation with explanation and alternatives
     """
-    if budget < 500:
+    if budget < 800:
         raise HTTPException(
             status_code=400, 
-            detail="Budget must be at least $500 to get a meaningful recommendation."
+            detail="Budget must be at least $800 to build a complete PC. Our data shows the minimum working build costs $798."
         )
 
     # Get the core recommendation and candidates
